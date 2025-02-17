@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Puissance 4 – Clone avec Reset</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #222;
+    }
+    canvas { display: block; }
+    /* Message principal (en haut à gauche) */
+    #message {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: #fff;
+      font-size: 24px;
+      font-family: Arial, sans-serif;
+      z-index: 10;
+    }
+    /* Jauge d'évaluation (en haut à droite) */
+    #gaugeContainer {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 220px;
+      z-index: 10;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      text-align: center;
+    }
+    #gaugeLabel {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+    #gaugeBarContainer {
+      width: 100%;
+      height: 20px;
+      border: 1px solid #fff;
+      background: #444;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    #gaugeBar {
+      height: 100%;
+      width: 50%; /* Valeur initiale : 50% (position neutre) */
+      background: #888;
+      transition: width 0.2s, background 0.2s;
+    }
+    /* Bouton Reset */
+    #resetButton {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      z-index: 10;
+      padding: 10px 20px;
+      background: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #resetButton:hover {
+      background: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <!-- Message principal -->
+  <div id="message"></div>
+  <!-- Audio pour le son de chute -->
+  <audio id="dropSound" src="drop.mp3"></audio>
+  <!-- Jauge d'évaluation de la position de l'ordinateur -->
+  <div id="gaugeContainer">
+    <div id="gaugeLabel">Position IA : 0</div>
+    <div id="gaugeBarContainer">
+      <div id="gaugeBar"></div>
+    </div>
+  </div>
+  <!-- Bouton Reset -->
+  <button id="resetButton">Reset</button>
+
+  <!-- Inclusion de Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js?v=1.0.1"></script>
+</body>
+</html>
