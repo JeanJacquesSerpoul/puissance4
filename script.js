@@ -437,7 +437,7 @@ function updateGauge() {
         } else {
             gaugeBar.style.background = "#888";
         }
-        gaugeLabel.innerText = "Position IA : " + evalScore.toFixed(0);
+        //gaugeLabel.innerText = "Position IA : " + evalScore.toFixed(0);
     }
 }
 
